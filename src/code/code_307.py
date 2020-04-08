@@ -3,6 +3,12 @@
 """
 题目链接：https://leetcode-cn.com/problems/range-sum-query-mutable/
 
+思路：第一次初始化时，记算并记录第0到第n的总和并更新到nums内
+获取sumRange时，直接计算差值即可（nums[j] - nums[i-1]）；
+update操作，需要计算该位置的delta变动情况，迭代更新指定位置到最后；
+
+ps ：注意处理i = 0 情况
+
 Authors: fanzijian(fanzijian@baidu.com)
 Date:    2020-04-08 11:23:56
 
