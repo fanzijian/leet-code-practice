@@ -3,9 +3,13 @@
 """
 题目链接：https://leetcode-cn.com/problems/subarray-sum-equals-k/
 
+O(N)
 利用hash表存储累计和，如果存在sum(i, j) == k
 那么则有 sum[0, j] - sum[0, i] == k
 即 sum[0, i]在该hash表中的次数，即对应和j可以组成的连续和为k的次数
+
+O(N^2)
+遍历并计算连续累计和即可
 
 Authors: fanzijian(fanzijian@baidu.com)
 Date:    2020-04-12 11:23:56
