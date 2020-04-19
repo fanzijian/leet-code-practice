@@ -3,12 +3,10 @@
 """
 问题：https://leetcode-cn.com/problems/k-th-smallest-in-lexicographical-order/
 
-
+需要重新做
 Authors: fanzijian
 Date:    2020-04-19 22:31:56
 """
-
-
 class Solution(object):
     def findKthNumber(self, n, k):
         """
