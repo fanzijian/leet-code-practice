@@ -5,7 +5,7 @@
 
 桶排序或者堆排序都行
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-16 23:50:56
 
 """

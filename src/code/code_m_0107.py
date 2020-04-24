@@ -3,7 +3,7 @@
 """
 题目链接：https://leetcode-cn.com/problems/rotate-matrix-lcci/
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-06 11:23:56
 
 """

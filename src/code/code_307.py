@@ -9,7 +9,7 @@ update操作，需要计算该位置的delta变动情况，迭代更新指定位
 
 ps ：注意处理i = 0 情况
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-08 11:23:56
 
 """

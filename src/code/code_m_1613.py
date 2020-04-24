@@ -4,7 +4,7 @@
 题目链接：https://leetcode-cn.com/problems/intersection-lcci/
 
 额，处理情况比想象中要麻烦的多得多。。。
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-12 11:23:56
 
 """

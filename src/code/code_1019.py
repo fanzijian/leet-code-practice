@@ -7,7 +7,7 @@
 遍历链表，对比当前的cur.val和list中的情况，
 将list中所有val小于cur.val的，对应index的结果更新为cur.val即可
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-12 11:23:56
 
 """

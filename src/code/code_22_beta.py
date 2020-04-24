@@ -6,7 +6,7 @@
 可以考虑一个一个加符号，当数量达到2*n时，则表示达到给定长度
 期间维持l > r , l < n
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-06 11:23:56
 
 """

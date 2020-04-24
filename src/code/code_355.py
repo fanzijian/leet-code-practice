@@ -6,7 +6,7 @@
 注意点：各种存在性处理，获取最近10条状态部分可以优化（多个有序数组排序的问题）
 优化后从O(N*log(N))优化为O(N)
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-13 23:50:56
 
 """

@@ -11,7 +11,7 @@ O(N)
 O(N^2)
 遍历并计算连续累计和即可
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-12 11:23:56
 
 """

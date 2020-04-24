@@ -5,7 +5,7 @@
 
 类似于广度优先搜索，递归剪枝
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-16 00:07:56
 
 """

@@ -13,7 +13,7 @@
 需要维护相应的关系，使得O(1)能够找到
 可以维护一个双向链表，用于维护新旧关系
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-06 11:23:56
 
 """

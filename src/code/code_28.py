@@ -16,7 +16,7 @@ kmp算法实现:
 2. 移动滑动窗口，当发生不匹配时，则根据next队列，计算滑动步数 next(char) + 1
 
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-12 11:23:56
 
 """

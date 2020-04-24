@@ -6,7 +6,7 @@
 原址修改，首先遍历，找到所有的1，然后处理所有的1，如果1的上下左右都是>=1的，则将该值修改为2
 处理完之后，再处理所有的2，以此类推
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-15 23:00:56
 
 """

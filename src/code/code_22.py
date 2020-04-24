@@ -6,7 +6,7 @@
 共有 l=n 个 '(' 以及 r=n 个 ')'，递归选择左括号或者右括号，当l==r==0时，添加到结果集合中，
 当保证每次选择，l>=r同时l>=0 且 r>=0
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-06 11:23:56
 
 """

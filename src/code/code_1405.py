@@ -5,7 +5,7 @@
 
 思路：贪心算法，优先选择数量最多的，如果数量最多的已经连续两次了，则使用次多的
 
-Authors: fanzijian(fanzijian@baidu.com)
+Authors: fanzijian
 Date:    2020-04-08 19:19:56
 
 """
