@@ -3,7 +3,7 @@
 """
 题目链接：https://leetcode-cn.com/problems/out-of-boundary-paths/
 
-动态规划&位运算&状态机
+动态规划
 
 Authors: fanzijian
 Date:    2020-05-20 23:33:56
