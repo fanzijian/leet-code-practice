@@ -4,7 +4,6 @@ class Node(object):
         self.prev = None
         self.next = None
 
-
 class LRU(object):
     def __init__(self, size):
         self.size = size
@@ -52,6 +51,8 @@ class LRU(object):
             cur = self.idx_map[key]
             self.move_node_to_end(cur)
 
+
+
     def move_node_to_end(self, cur):
         prev = cur.prev
         prev.next = cur.next
@@ -60,3 +61,4 @@ class LRU(object):
         cur.prev = self.tail
         self.tail = cur
         cur.next = None
+
