@@ -1,5 +1,6 @@
 class Node(object):
-    def __init__(self, val):
+    def __init__(self, key, val):
+        self.key = key
         self.val = val
         self.prev = None
         self.next = None
@@ -9,14 +10,14 @@ class LRU(object):
     def __init__(self, size):
         self.size = size
         self.count = 0
-        self.idx_map = {}
-        slave = Node(-1)
+        self.cache = {}
+        slave = Node(-1, -1)
         self.head = slave
         self.tail = slave
 
     def get(self, key):
-        if key in self.idx_map:
-            cur = self.idx_map[key]
+        if key in self.cache:
+            cur = self.cache[key]
             self.move_node_to_end(cur)
             return cur.val
         else:
@@ -26,8 +27,9 @@ class LRU(object):
         if self.size <= 0:
             return
 
-        if key not in self.idx_map:
-            node = Node(value)
+        if key not in self.cache:
+            node = Node(key, value)
+            self.cache[key] = node
             if self.count < self.size:
                 if self.count == 0:
                     self.head.next = node
@@ -39,17 +41,21 @@ class LRU(object):
                     node.prev = self.tail
                     self.tail = node
                 self.count += 1
-                self.idx_map[key] = node
+                self.cache[key] = node
             else:
                 self.tail.next = node
                 node.prev = self.tail
                 self.tail = node
+
+                del self.cache[self.head.key]
+
                 prev = self.head.prev
                 prev.next = self.head.next
                 self.head = self.head.next
                 self.head.prev = prev
         else:
-            cur = self.idx_map[key]
+            cur = self.cache[key]
+            cur.val = value
             self.move_node_to_end(cur)
 
     def move_node_to_end(self, cur):

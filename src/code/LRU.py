@@ -1,64 +1,74 @@
 class Node(object):
-    def __init__(self, val):
+    def __init__(self, key, val):
+        self.key = key
         self.val = val
         self.prev = None
         self.next = None
 
 class LRU(object):
-    def __init__(self, size):
-        self.size = size
-        self.count = 0
-        self.idx_map = {}
-        slave = Node(-1)
-        self.head = slave
-        self.tail = slave
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.size = 0
+        self.cache = {}
+        self.head = Node()
+        self.tail = Node()
+        self.head.next = self.tail
+        self.tail.prev = self.head
 
     def get(self, key):
-        if key in self.idx_map:
-            cur = self.idx_map[key]
-            self.move_node_to_end(cur)
-            return cur.val
-        else:
-            return None
+        if key not in self.cache:
+            return -1
+        cur = self.cache[key]
+        if cur.next != self.tail:
+            # 移除当前节点
+            prev = cur.prev
+            prev.next = cur.next
+            cur.next.prev = prev
+            # 放入双向队列尾部（tail节点前）
+            prev = self.tail.prev
+            prev.next = cur
+            cur.prev = prev
+            cur.next = self.tail
+            self.tail = cur
+
+        return cur.val
 
     def put(self, key, value):
-        if self.size <= 0:
-            return
-
-        if key not in self.idx_map:
-            node = Node(value)
-            if self.count < self.size:
-                if self.count == 0:
-                    self.head.next = node
-                    node.prev = self.head
-                    self.head = node
-                    self.tail = node
-                else:
-                    self.tail.next = node
-                    node.prev = self.tail
-                    self.tail = node
-                self.count += 1
-                self.idx_map[key] = node
-            else:
-                self.tail.next = node
-                node.prev = self.tail
-                self.tail = node
-                prev = self.head.prev
-                prev.next = self.head.next
-                self.head = self.head.next
-                self.head.prev = prev
+        if key not in cache:
+            node = Node(key, value)
+            # 添加进哈希表
+            self.cache[key] = node
+            # 添加至双向链表的头部
+            self.addToHead(node)
+            self.size += 1
+            if self.size > self.capacity:
+                # 如果超出容量，删除双向链表的尾部节点
+                removed = self.removeTail()
+                # 删除哈希表中对应的项
+                self.cache.pop(removed.key)
+                self.size -= 1
         else:
-            cur = self.idx_map[key]
-            self.move_node_to_end(cur)
+            # 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
+            node = self.cache[key]
+            node.value = value
+            self.moveToHead(node)
 
+    def removeNode(self, node):
+        prev = node.prev
+        prev.next = node.next
+        node.next.prev = prev
 
+    def moveToHead(self, node):
+        self.removeNode(node)
+        self.addToHead(node)
 
-    def move_node_to_end(self, cur):
-        prev = cur.prev
-        prev.next = cur.next
-        cur.next.prev = prev
-        self.tail.next = cur
-        cur.prev = self.tail
-        self.tail = cur
-        cur.next = None
+    def addToHead(self, node):
+        node.prev = self.head
+        node.next = self.head.next
+        self.head.next.prev = node
+        self.head.next = node
 
+    def removeTail(self):
+        node = self.tail.prev
+        self.removeNode(node)
+        return node
