@@ -84,8 +84,6 @@ class BST(object):
             else:
                 fa.right = min_right
 
-
-
     def BFS(self):
         pass
 
